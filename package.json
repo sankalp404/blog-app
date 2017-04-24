@@ -1,7 +1,7 @@
 {
   "name": "blog-app",
   "version": "0.0.0",
-  "description": "A Simple Blogging App that uses redux-router to navigate through posts",
+  "description": "A Simple Blogging App that uses redux and react-router to navigate through posts and perform CRUD operations",
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",

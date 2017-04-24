@@ -11,7 +11,6 @@ export default (
         <IndexRoute component={BlogIndex} />
         <Route path="posts/new" component={BlogNew} />
         <Route path="posts/:id" component={BlogDetail} />
-         {/*<Route path="greet3" component={Greeting} />*/}
     </Route>
 );
 
