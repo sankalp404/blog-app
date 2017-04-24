@@ -1,7 +1,7 @@
 # Blogging App
 
 
-## A Simple Blogging App that uses redux and react-router to navigate through posts and perform CRUD operations
+## A Simple Blogging App that uses redux and react-router to navigate through posts and perform CRUD operations. Also uses redux-form for form validation
 
 * only front-end with react-router
 
