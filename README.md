@@ -1,17 +1,10 @@
 # Blogging App
 
 
-## A Simple Blogging App that uses redux and react-router to navigate through posts and perform CRUD operations. Also uses redux-form for form validation
+## A Simple Blogging App that uses redux, redux-form and dynamic routing with react-router-dom to navigate through posts and perform CRUD operations. 
 
-* only front-end with react-router
+> This is only the front-end that utilizes a 3rd party API
 
-> Getting Started
-
-There are two methods for getting started with this repo.
-
-> Familiar with Git?
-
-Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
 	> git clone git@github.com:sankalp404/blog-app.git

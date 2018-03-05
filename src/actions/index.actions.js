@@ -26,20 +26,25 @@ export function fetchPosts(){
     };
 }
 
-export function createPost(props){
-    const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, props);
-
+export function createPost(values, callback){
+    // This is using a callback to re-route us to the home page.
+    const request = axios
+          .post(`${ROOT_URL}/posts${API_KEY}`, values)
+          .then(() => callback());
+      
     return {
         type: CREATE_POST,
         payload: request
     };
 }
 
-export function deletePost(id){
-        const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`);
-
+export function deletePost(id, callback) {
+    const request = axios
+      .delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
+      .then(() => callback());
+  
     return {
-        type: DELETE_POST,
-        payload: request
+      type: DELETE_POST,
+      payload: id
     };
 }

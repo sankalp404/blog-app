@@ -1,14 +1,30 @@
-import {FETCH_POSTS, FETCH_POST } from '../actions/index.actions';
+import _ from 'lodash'
+import { FETCH_POSTS, FETCH_POST, DELETE_POST } from "../actions/index.actions";
 
-const INITIAL_STATE={all:[], currentPost:null};
+// const INITIAL_STATE={all:[], currentPost:null};
+// Note: Changed State to be an Object instead of an array 
 
-export default function(state = INITIAL_STATE, action){
-    switch(action.type){
-        case FETCH_POST:
-            return { ...state, currentPost:action.payload.data };
-        case FETCH_POSTS:
-            return { ...state, all: action.payload.data };
-        default:
-            return state;
-    }
+export default function(state = {}, action) {
+  switch (action.type) {
+    case DELETE_POST:
+      return _.omit(state, action.payload);
+
+    case FETCH_POST:
+        // return { ...state, currentPost:action.payload.data };
+        
+        // ES5 will look like this
+        // const post = action.payload.data;
+        // const newState = { ...state }
+        // newState[post.id] = post 
+        // return newState   
+        
+        return { ...state, [action.payload.data.id]: action.payload.data };
+
+    case FETCH_POSTS:
+            //return { ...state, all: action.payload.data };
+        return _.mapKeys(action.payload.data, "id");
+
+    default:
+        return state;
+  }
 }
